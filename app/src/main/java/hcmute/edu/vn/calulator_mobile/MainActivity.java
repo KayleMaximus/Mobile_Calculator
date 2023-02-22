@@ -18,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
     }
     ptotected void Hocbaidiloz()
     {
-        log.e("Cho bo m lm cai giao dien");
+        log.e("concak");
+    }
+    ptotected void Lozmaidihochtheduc()
+    {
+        log.e("Tuoi loz");
     }
 }
