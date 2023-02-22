@@ -16,4 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         setContentView(R.layout.activity_main);
     }
+    ptotected void Hocbaidiloz()
+    {
+        log.e("Cho bo m lm cai giao dien");
+    }
 }
