@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected  void onCreatedView(Bundle savedInstanceState){
-
+        hello map. wake tml tin up và code mobile đi thk khốn
     }
 }
