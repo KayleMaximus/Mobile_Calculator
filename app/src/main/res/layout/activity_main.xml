@@ -10,22 +10,25 @@
         android:id="@+id/solution_tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="0"
-        android:textSize="32dp"
+        android:layout_above="@id/result_tv"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
-        android:layout_above="@id/result_tv"
-        android:layout_margin="16dp"/>
+        android:textSize="32dp" />
 
     <TextView
         android:id="@+id/result_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/buttons_layout"
+        android:layout_margin="16dp"
         android:text="0"
-        android:textSize="64dp"
         android:textAlignment="textEnd"
         android:textColor="@color/black"
-        android:layout_above="@id/buttons_layout"/>
+        android:textSize="64dp" />
 
 
     <LinearLayout
@@ -35,12 +38,12 @@
         android:layout_alignParentBottom="true"
         android:background="#F1F1F1"
         android:orientation="vertical"
-        android:padding="5dp">
-
+        android:paddingVertical="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -49,7 +52,7 @@
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="#FF5722"
+                android:backgroundTint="#F44336"
                 android:text="C"
                 android:textColor="@color/white"
                 android:textSize="32dp"
@@ -90,11 +93,13 @@
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 app:cornerRadius="36dp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -141,11 +146,13 @@
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 app:cornerRadius="36dp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -192,11 +199,13 @@
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 app:cornerRadius="36dp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
@@ -243,23 +252,25 @@
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 app:cornerRadius="36dp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_AC"
+                android:id="@+id/button_ac"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:layout_margin="12dp"
-                android:backgroundTint="#FF5722"
+                android:backgroundTint="#F44336"
                 android:text="AC"
                 android:textColor="@color/white"
-                android:textSize="21dp"
+                android:textSize="20dp"
                 app:cornerRadius="36dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -285,7 +296,7 @@
                 app:cornerRadius="36dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_equal"
+                android:id="@+id/button_equals"
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
@@ -295,8 +306,11 @@
                 android:textColor="@color/white"
                 android:textSize="32dp"
                 app:cornerRadius="36dp" />
+
         </LinearLayout>
 
 
     </LinearLayout>
+
+
 </RelativeLayout>
