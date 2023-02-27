@@ -10,6 +10,9 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.timepicker.MaterialTimePicker;
 
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView resultTv, solutionTv;
@@ -60,24 +63,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
         String dataToCalculate = solutionTv.getText().toString();
 
-        if(buttonText.equals("AC")){
+        if (buttonText.equals("AC")) {
             solutionTv.setText("");
             resultTv.setText("0");
             return;
         }
-        if(buttonText.equals("=")){
+        if (buttonText.equals("=")) {
             solutionTv.setText(resultTv.getText());
             return;
         }
-        if(buttonText.equals("C")){
-            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length()-1);
-        }else{
-            dataToCalculate = dataToCalculate+buttonText;
+        if (buttonText.equals("C")) {
+            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+        } else {
+            dataToCalculate = dataToCalculate + buttonText;
         }
         solutionTv.setText(dataToCalculate);
+
+        String finalResult = getResult(dataToCalculate);
+
+        if (!finalResult.equals("Err")) {
+            resultTv.setText(finalResult);
+        }
     }
 
-    String getResult(String data){
-        return "Calculated";
+    String getResult(String data) {
+        try {
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable = context.initStandardObjects();
+            String finalResult = context.evaluateString(scriptable, data, "Javascript", 1, null).toString();
+            if (finalResult.endsWith(".0")) {
+                finalResult = finalResult.replace(".0", "");
+            }
+            return finalResult;
+        } catch (Exception e) {
+            return "Err";
+        }
     }
 }
